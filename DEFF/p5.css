@@ -1,0 +1,16 @@
+td, th {
+    padding: 1px 4px;
+}
+
+table,tr,td,th{
+border:1px solid lightGreen;
+border-collapse:collapse;
+vertical-align:middle;
+background:"blue";
+margin-top: 50px;
+margin-left: 20px;
+}
+table{
+    display: inline;
+    text-align: right;
+}

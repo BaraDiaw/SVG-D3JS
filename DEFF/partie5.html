@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+    </head>
+    <body>
+    </body>
+        <link rel="stylesheet" href="p5.css">
+        <script src = "d3.js"></script>
+        <script>
+            //Données du tableau
+            var election = [
+                            {Régions:"Dakar",IDY:"115612",MADICKE:"212355",MACKY:"212355", SONKO:"101003",ISSASALL:"18662"},
+                            {Régions:"Diourbel",IDY:"22026",MADICKE:"1682",MACKY:"40501", SONKO:"6300",ISSASALL:"884"},
+                            {Régions:"Fatick",IDY:"5172",MADICKE:"673",MACKY:"8088",SONKO:"9349",ISSASALL:"4089"},
+                            {Régions:"Kaffrine",IDY:"6513",MADICKE:"731",MACKY:"38874",SONKO:"5294",ISSASALL:"3406"},
+                            {Régions:"Kaolack",IDY:"18649",MADICKE:"1758",MACKY:"99376",SONKO:"22677",ISSASALL:"4343"},
+                            {Régions:"Kédougou",IDY:"2494",MADICKE:"377",MACKY:"16153",SONKO:"3269",ISSASALL:"324"},
+                            {Régions:"Kolda",IDY:"6245",MADICKE:"1042",MACKY:"36927",SONKO:"13839",ISSASALL:"789"},
+                            {Régions:"Louga",IDY:"19788",MADICKE:"2344",MACKY:"73514",SONKO:"9612",ISSASALL:"15617"},
+                            {Régions:"Matam",IDY:"2239",MADICKE:"0",MACKY:"92454",SONKO:"3698",ISSASALL:"582"},
+                            {Régions:"Saint Louis",IDY:"17404",MADICKE:"3160",MACKY:"62788",SONKO:"18632",ISSASALL:"7471"},
+                            {Régions:"Sedhiou",IDY:"3808",MADICKE:"680",MACKY:"23414",SONKO:"14833",ISSASALL:"407"},
+                            {Régions:"Tambacounda",IDY:"5401",MADICKE:"1074",MACKY:"46096",SONKO:"11258",ISSASALL:"1184"},
+                            {Régions:"Thiés",IDY:"120054",MADICKE:"2312",MACKY:"100422",SONKO:"19737",ISSASALL:"12102"},
+                            {Régions:"Ziguinchor",IDY:"2419",MADICKE:"510",MACKY:"32846",SONKO:"41291",ISSASALL:"556"}
+                            ];
+
+            //Création du tableau 1
+            var body = d3.select("body")
+            var tableau1 = body.append("table");
+            var thead = tableau1.append("thead")
+            var tbody = tableau1.append("tbody");
+
+            //Remplissage des colonnes
+            var columns = ["Régions", "IDY", "MADICKE", "MACKY", "SONKO", "ISSASALL"];
+            thead.append("tr")
+                .selectAll("th")
+                .data(columns)
+                .enter()
+                .append("th")
+                .text(function(d,i){
+                return d;
+                });
+
+            //Remplissage des lignes
+            var rows = tbody.selectAll("tr")
+                .data(election)
+                .enter()
+                .append("tr")
+
+            //Remplissage des cellules
+            var cells = rows.selectAll("td")
+                .data(function(row){
+                    return columns.map(function(column){
+                        return{column:column,value:row[column]};
+                    });
+                })
+                .enter()
+                .append("td")
+                .text(function(d,i){
+                    return d.value;
+                })  
+
+            //Création du tableau 2
+            var body = d3.select("body");
+            var tableau2 = body.append("table");
+            var thead = tableau2.append("thead")
+            var tbody = tableau2.append("tbody");
+            //Remplissage des colonnes
+            var columns = ["Régions", "IDY", "MADICKE", "MACKY", "SONKO", "ISSASALL"];
+            thead.append("tr")
+                .selectAll("th")
+                .data(columns)
+                .enter()
+                .append("th")
+                .text(function(d,i){
+                return d;
+                });
+            //Remplissage des lignes
+            var rows = tbody.selectAll("tr")
+                .data(election)
+                .enter()
+                .append("tr")
+
+            //Remplissage des cellules
+            var cells = rows.selectAll("td")
+                .data(function(row){
+                    return columns.map(function(column){
+                        return{column:column,value:row[column]};
+                    });
+                })
+                .enter()
+                .append("td")
+                .text(function(d,i){
+                    return d.value})
+                    .style("background-color",function(d){
+      	                if (d.value<26500){
+      		                return "yellow"
+      	                }
+      	                else if (d.value<53000){
+      		                return "orange"
+      	                }
+      	                else if (d.value>53000){
+      		                return "green"
+      	                }
+                    });
+                
+        </script>
+    </body>
+</html>

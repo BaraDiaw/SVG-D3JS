@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    
+    <meta charset="UTF-8">
+    <head>
+    <style rel="stylesheet" type="text/css">
+    /*Done By Ousmane Dia*/
+    .header{
+        background-color:  black;
+        width: 450px;
+        height: 30px;
+          }
+    .footer{
+        background-color: black;
+        width: 450px;
+        height: 45px;
+        }
+    .p1{
+        color: blanchedalmond;
+    }
+    .ajouter{
+        width: 65px;
+        height: 25px;
+        background-color: chartreuse;
+    }
+    .annuler{
+        width: 65px;
+        height: 25px;
+        background-color: red;
+    }
+    .p2{
+        color: seashell;
+    }
+     </style>
+     <script type="text/javascript">
+     /*Fonction Annuler pour vider les champs aprés au click*/
+       function annuler(){
+        document.getElementById("Nom").value="";
+        document.getElementById("Categorie").value="";
+        document.getElementById("Nh").value="";
+        document.getElementsByName("hsup").value="";
+        document.getElementById("hsup").value="";
+        document.getElementById("avantage").value="";
+        document.getElementById("reset").innerHTML="Annuler";
+     }
+     /*Récupération, calule et affichage*/
+      function recup(){
+        var No=document.getElementById("Nom").value;
+        var Cat=document.getElementById("Categorie").value;
+        var question=document.getElementsByName("hsup").value;
+        var heuresup=parseInt(document.getElementById("hsup").value);
+        var Av=parseInt(document.getElementById("avantage").value);
+        var Heure=parseInt(document.getElementById("Nh").value);
+        var tab=document.getElementById("lignetab");
+        var ligne=tab.insertRow();
+        var name=ligne.insertCell(0);
+        var Salaire=ligne.insertCell(1);
+        var RAS=ligne.insertCell(2);
+        var SN=ligne.insertCell(3);
+        name.innerHTML=No;
+        /* Algprithme */
+        if (Cat="Catégorie A"){
+            if (heuresup<=5){
+                var SB=Heure*10000;
+                var HSUP=heuresup*(0.3*10000);
+                var S=SB+HSUP+Av;
+                var ras=0.1*S;
+                var sn=S-ras;
+                Salaire.innerHTML=S;
+                RAS.innerHTML=ras;
+                SN.innerHTML=sn;
+                }
+            else{
+                var SB=Heure*10000;
+                var HSUP=heuresup*(0.45*10000);
+                var S=SB+HSUP+Av;
+                var ras=0.1*S;
+                var sn=S-ras;
+                Salaire.innerHTML=S;
+                RAS.innerHTML=ras;
+                SN.innerHTML=sn;
+                 }
+         }
+        else if (Cat="Catégorie B"){
+           if (heuresup<=5){
+                var  SB=Heure*7500;
+                var HSUP=heuresup*(0.3*7500);
+                var S=SB+HSUP+Av;
+                var ras=0.075*S;
+                var sn=S-ras;
+                Salaire.innerHTML=S;
+                RAS.innerHTML=ras;
+                SN.innerHTML=sn;
+                }
+            else{
+               var SB=Heure*7500;
+               var HSUP=heuresup*(0.45*7500);
+               var S=SB+HSUP+Av;
+               var ras=0.075*S;
+               var sn=S-ras;
+               Salaire.innerHTML=S;
+               RAS.innerHTML=ras;
+               SN.innerHTML=sn;
+                }
+        }
+        else if (Cat="Catégorie C"){
+            if (heuresup<=5){
+                var SB=Heure*5000;
+                var HSUP=heuresup*(0.3*5000);
+                var S=SB+HSUP+Av;
+                var ras=0.05*S;
+                var sn=S-ras;
+                Salaire.innerHTML=S;
+                RAS.innerHTML=ras;
+                SN.innerHTML=sn;
+               }
+            else{
+                var HSUP=heuresup*(0.45*5000);
+                var SB=Heure*5000;
+                var S=SB+HSUP+Av;
+                var sn=S-ras;
+                var ras=0.05*S;
+                Salaire.innerHTML=S;
+                RAS.innerHTML=ras;
+                SN.innerHTML=sn;
+               }
+            }
+       
+        
+}
+/*Partie HTML, Mise en forme de la page*/
+   </script>
+    </head>
+    <body class="body">
+        <center> <header class="header"><marquee behavior="alternate"><p class="p2">ESPACE EMPLOYER</p></marquee></header></center>
+       <table border="1" cellspacing="0" cellpadding="20" width="1000" height="500"   align="center"> 
+           <td>
+          <div  classe="Formulaire ">
+            <form align="left"  method="POST" action="">
+                <h2>PANNEAU DE SAISIE</h2>
+                <label>Nom de L'employer</label> <input id="Nom"><br><br><br>
+                <label>Catégorie</label> <select id="Categorie">
+                    <option>Catégorie A</option>
+                    <option>Catégorie B</option>
+                    <option>Catégorie C</option>
+                </select><br><br><br>
+                <label>Nombre d'heures</label><input id="Nh"><br><br><br>
+                <h4>A t'il effectué des heures suplémentaires ?</h4>
+                <label> Oui</label> <input type="radio" name="hsup"> 
+                <label> Non</label> <input type="radio" name="hsup">
+                <br><br><br>
+                <label>Heure sup</label> <input type="number" step="1" min="1" max="140" value="0" id="hsup">  <br><br><br>                  
+                <label>Avantage</label> <input id="avantage"><br><br><br>
+               
+              </form>
+              <input type="submit" value="Ajouter" class="ajouter" onClick="recup()"></input>
+              <input type="reset" value="Annuler" class="annuler" onClick="annuler()"></input>
+        </td>
+        <td>
+        </div >    
+    
+  <div class="Tableau">
+    <fieldset> 
+            <table border="1" cellspacing="0" cellpadding="10">
+                <legend><STRONG> ENREGISTREMENT </STRONG></legend>
+               <tr>
+                   <td>Nom</td>
+                   <td>Salaire </td>
+                   <td>RAS</td>
+                   <td>Salire Net</td>
+               </tr>
+              
+               <tbody id="lignetab"></tbody>     
+        </fieldset>
+        </div>
+        </td>
+       </table>
+    </table>
+    </body>
+    <center><footer class="footer" align="center">
+        <p class="p1">Copyright<br>
+        Ousmane Dia, ND:17020100490<br>
+    </footer>
+</center>
+    
+    
+</html>

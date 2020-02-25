@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Formes SVG</title>
+    </head>
+    
+    
+    <body>
+      <svg width="1300" height="660">
+        <g>
+          <!--<title>A dessiner</title>-->
+  
+          <rect id="svg_1" height="49" width="68"  y="100" x="150" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <rect id="svg_2" height="70" width="107" y="100" x="420" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <rect id="svg_3" height="53" width="76"  y="100" x="300" stroke-width="5" stroke="#000000" fill="#007f7f"/>
+  
+          <ellipse id="svg_4"  cy="290" cx="835" ry="15" rx="5" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <ellipse id="svg_5"  cy="290" cx="810" ry="20" rx="10" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <ellipse id="svg_6"  cy="290" cx="775" ry="25" rx="15" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <ellipse id="svg_7"  cy="290" cx="725" ry="30" rx="20" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <ellipse id="svg_8"  cy="290" cx="650" ry="40" rx="35" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <ellipse id="svg_9"  cy="290" cx="560" ry="50" rx="40" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <ellipse id="svg_10" cy="290" cx="460" ry="60" rx="45" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <ellipse id="svg_11" cy="290" cx="350" ry="70" rx="50" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <ellipse id="svg_12" cy="290" cx="225" ry="80" rx="50" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+          <ellipse id="svg_13" cy="290" cx="75"  ry="90" rx="62"  stroke-width="5" stroke="#000000" fill="#00ff7f"/>
+          
+          <line id="svg_14" y1="400" x1="100" y2="600" x2="100"  stroke="#000000" fill="none"/>
+          <line id="svg_15" y1="600" x1="150" y2="425" x2="150"  stroke="#000000" fill="none"/>
+          <line id="svg_16" y1="600" x1="200" y2="450" x2="200"  stroke="#000000" fill="none"/>
+          <line id="svg_17" y1="600" x1="250" y2="475" x2="250"  stroke="#000000" fill="none"/>
+          <line id="svg_18" y1="600" x1="300" y2="500" x2="300"  stroke="#000000" fill="none"/>
+          <line id="svg_19" y1="475" x1="350" y2="600" x2="350"  stroke="#000000" fill="none"/>
+          <line id="svg_20" y1="450" x1="400" y2="600" x2="400"  stroke="#000000" fill="none"/>
+          <line id="svg_21" y1="425" x1="450" y2="600" x2="450"  stroke="#000000" fill="none"/>
+          <line id="svg_22" y1="600" x1="500" y2="400" x2="500"  stroke="#000000" fill="none"/>
+  
+          <text id="svg_28" text-anchor="middle" font-family="serif" font-size="24" y="31" x="339" stroke-width="0" stroke="#000000" fill="#000000">Salut les amis du MSDA. Effacez moi!</text>
+        </g>
+      </svg>
+      <script src = "d3.js"></script>
+      <script>
+        // Ici je sélectionne de tous les ellipses et je change leur couleur de remplissage en bleu avec animation
+        var groupEllipse = d3.selectAll("ellipse")
+                            .attr("fill", "blue")
+                            .attr("cx", 50)
+                            .transition()
+                            .delay(function(d,i){return(i*500)})
+                            .attr("duration", 2000)
+                            .attr("cx",function(d,i){return 120*(i+1)});
+                            
+        // Ici je sélectionne tous rectangles, je mesure leur bordure à 2px puis je les stylise afin qu'ils soient roses.
+        var groupRect = d3.selectAll("rect")
+                        .attr("stroke-width", "2px")
+                        .style("fill", "pink");
+
+        // Styliser le premier rectangle de sorte qu'il soit bleu.
+        var rect1 = d3.select("#svg_1")
+                    .style("fill", "blue");
+
+        // Ici je sélectionne le rectangle avec l'id svg_2 puis je rend la couleur du trait orange.
+        var rect2 = d3.select("#svg_2")
+                    .attr("stroke", "orange");
+
+        // Ici je défini la couleur d'arrière-plan du SVG sur un gris clair.
+        var couleurSvg = d3.select("svg")
+                            .style("background-color", "#CECECE");
+
+        // Ici je défini le trait des lignes sur 3 pixels.
+        var groupLignes = d3.selectAll("line")
+                            .attr("stroke-width", "3px");
+
+        // Ici j'utilise une échelle de couleurs d3 category10 () pour définir la couleur des lignes.
+        var cat10 = ["#1F77B4", "#FF7F0E", "#2CA02C", "#D62728", "#9467BD", "#8C564B", "#E377C2", "#7F7F7F", "#BCBD22", "#17BECF"];
+    
+        var couleurLignes = d3.selectAll("line")
+  
+                              .style("fill", function(d,i){ return d;});
+                            
+        // Ici je crée une fonction permettant de supprimer le text au click.
+        var text = d3.select("text")
+                    .on("click", function(d) {
+                    d3.select("#svg_28").remove();
+                    });
+
+      </script>
+    </body>
+</html>

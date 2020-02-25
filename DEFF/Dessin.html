@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="d3.js"></script>
+    <style rel="stylesheet" type="text/css">
+     .body{
+          width:600px;
+          height:650px;
+          background-image: linear-gradient(blue, white);
+          }
+    </style>
+</head>
+<body class="body">
+
+  <div id="svg1"></div>
+  <script type="text/javascript">
+  /*Done by Ousmane Dia*/
+  /*Sélection de notre espace SVG et définition des dimensions */
+  var svg = d3.select("#svg1").append("svg")
+     .attr("x",1)
+     .attr("y",1)
+     .attr("width",1300)
+     .attr("height",600);
+/*premiére Case*/
+     svg.append("rect")
+      .attr("x",50)
+      .attr("y",500)
+      .attr("width",150)
+      .attr("height",100)
+      .style("fill", "#996633" );
+      svg.append("rect")
+      .attr("x",100)
+      .attr("y",550)
+      .attr("width",50)
+      .attr("height",60)
+      .style("fill","black");
+      svg.append("polyline")
+      .attr("points","50,500 150,400 100,400 200,500")
+      .style("fill", "black")
+      .style("stroke","black")
+      .style("stroke-width","2");
+ /*Deuxiéme case */
+      svg.append("rect")
+      .attr("x",250)
+      .attr("y",500)
+      .attr("width",150)
+      .attr("height",100)
+      .style("fill","#996633");
+      svg.append("rect")
+      .attr("x",300)
+      .attr("y",550)
+      .attr("width",50)
+      .attr("height",60)
+      .style("fill","black");
+      svg.append("polyline")
+      .attr("points","250,500 350,400 300,400 400,500")
+      .style("fill", "black")
+      .style("stroke","black")
+      .style("stroke-width","2");
+
+    /*Troisiéme case*/
+      svg.append("rect")
+      .attr("x",450)
+      .attr("y",500)
+      .attr("width",150)
+      .attr("height",100)
+      .style("fill", "#996633");
+      svg.append("rect")
+      .attr("x",500)
+      .attr("y",550)
+      .attr("width",50)
+      .attr("height",60)
+      .style("fill","black");
+      svg.append("polyline")
+      .attr("points","450,500 550,400 495,400 600,500")
+      .style("fill", "black")
+      .style("stroke","black")
+      .style("stroke-width","2");
+/*Le soleil sous forme d'un cercle*/
+svg.append("circle")
+    .attr("cx",1100)
+    .attr("cy",100)
+    .attr("r",40)
+    .style("stroke","	rgb(255, 219, 77)")
+    .style("fill", "	rgb(255, 191, 0)");
+
+/*le puit*/
+svg.append("rect")
+   .attr("x",1110)
+   .attr("y",550)
+   .attr("width",75)
+   .attr("height",100)
+    .style("fill","	rgb(0, 128, 255)");
+svg.append("polyline")
+      .attr("points","1090,600 1095,550 1088,510")
+      .style("stroke","#996633")
+      .style("stroke-width","3")
+      .style("fill", "none");
+svg.append("polyline")
+      .attr("points","1200,600 1205,550 1199,510")
+      .style("stroke","#996633")
+      .style("stroke-width","3")
+      .style("fill", "none");
+svg.append("polyline")
+      .attr("points"," 1088,510  1199,510")
+      .style("stroke","#996633")
+      .style("stroke-width","3")
+      .style("fill", "none");
+
+svg.append("polyline")
+      .attr("points","1130,550  1150,510  1170,550 ")
+      .style("stroke","black")
+      .style("stroke-width","1")
+      .style("fill" , "none");
+svg.append("circle")
+    .attr("cx",1150)
+    .attr("cy",513)
+    .attr("r",3)
+    .style("stroke"," black")
+    .style("fill", "black");
+
+svg.append("circle")
+    .attr("cx",830)
+    .attr("cy",430)
+    .attr("r",25)
+    .style("stroke","green")
+    .style("fill", "green");
+svg.append("circle")
+    .attr("cx",860)
+    .attr("cy",425)
+    .attr("r",25)
+    .style("stroke","green")
+    .style("fill", "green");
+svg.append("circle")
+    .attr("cx",880)
+    .attr("cy",450)
+    .attr("r",25)
+    .style("stroke","green")
+    .style("fill", "green");
+svg.append("circle")
+    .attr("cx",815)
+    .attr("cy",450)
+    .attr("r",25)
+    .style("stroke","green")
+    .style("fill", "green");
+svg.append("circle")
+    .attr("cx",813)
+    .attr("cy",470)
+    .attr("r",25)
+    .style("stroke","green")
+    .style("fill", "green");
+svg.append("circle")
+    .attr("cx",825)
+    .attr("cy",490)
+    .attr("r",25)
+    .style("stroke","green")
+    .style("fill", "green");
+svg.append("circle")
+    .attr("cx",880)
+    .attr("cy",470)
+    .attr("r",30)
+    .style("stroke","green")
+    .style("fill", "green");
+svg.append("circle")
+    .attr("cx",870)
+    .attr("cy",490)
+    .attr("r",25)
+    .style("stroke","green")
+    .style("fill", "green");
+svg.append("path")
+    .attr("d","M850,600    C850 512, 840 570, 850 510" )
+    
+    .style("stroke","#996633")
+    .style("stroke-width","12")
+    .style ("fill", "#996633");
+svg.append("circle")
+    .attr("cx",850)
+    .attr("cy",462)
+    .attr("r",55)
+    .style("stroke","green")
+    .style("fill", "green");
+
+/*Les oiseaux */
+    svg.append("path")
+    .attr("d","M845,110   C855 110, 860 115, 873 105" )
+    
+    .style("stroke","black")
+    .style("stroke-width","3")
+    .style ("fill", "none");
+svg.append("circle")
+    .attr("cx",860)
+    .attr("cy",113)
+    .attr("r",2)
+    .style("stroke","black")
+    .style("fill", "black");
+
+    svg.append("path")
+    .attr("d","M900,110   C910 110, 915 115, 933 105" )
+    
+    .style("stroke","black")
+    .style("stroke-width","3")
+    .style ("fill", "none");
+svg.append("circle")
+    .attr("cx",918)
+    .attr("cy",113)
+    .attr("r",2)
+    .style("stroke","black")
+    .style("fill", "black");
+
+    svg.append("path")
+    .attr("d","M950,99   C970 110, 965 98, 973 94" )
+    
+    .style("stroke","black")
+    .style("stroke-width","3")
+    .style ("fill", "none");
+svg.append("circle")
+    .attr("cx",964)
+    .attr("cy",104)
+    .attr("r",2)
+    .style("stroke","black")
+    .style("fill", "black");
+
+    svg.append("path")
+    .attr("d","M945,130   C965 145, 965 130, 973 130" )
+    
+    .style("stroke","black")
+    .style("stroke-width","3")
+    .style ("fill", "none");
+svg.append("circle")
+    .attr("cx",961)
+    .attr("cy",137)
+    .attr("r",2)
+    .style("stroke","black")
+    .style("fill", "black");
+
+svg.append("path")
+    .attr("d","M935,190   C950 200, 950 195, 960 185" )
+    
+    .style("stroke","black")
+    .style("stroke-width","3")
+    .style ("fill", "none");
+svg.append("circle")
+    .attr("cx",950)
+    .attr("cy",195)
+    .attr("r",2)
+    .style("stroke","black")
+    .style("fill", "black");
+
+
+    svg.append("path")
+    .attr("d","M1283,70   C1270  87, 1270 80 , 1250 80" )
+    
+    .style("stroke","black")
+    .style("stroke-width","3")
+    .style ("fill", "none");
+svg.append("circle")
+    .attr("cx",1270)
+    .attr("cy",82)
+    .attr("r",2)
+    .style("stroke","black")
+    .style("fill", "black");
+
+</script>
+
+  
+  
+</body>
+</html>

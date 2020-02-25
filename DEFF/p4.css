@@ -1,0 +1,21 @@
+.axis{
+    font:20px sans-serif;
+    fill:none;
+    stroke:black;
+    shape-rendering : crispEdges;
+}
+.axis text {
+    font: 14px sans-serif;
+}
+
+.bar{
+    fill:steelblue;
+}
+svg {
+width: 100%;
+height: 100%;
+position: center;
+}
+text{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
