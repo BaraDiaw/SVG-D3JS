@@ -1,4 +1,4 @@
-# Les base du SVG et du D3JS
+# Les bases du SVG et du D3JS
 
 Dans ce repertoire je partage des travaux de visualisation de données à partir des balises SVG et la librairie d3js de JavaScript. C'est un projet de classe dans le cadre d'une mise en application des notions apprises en cours.
 Le travail est composé de six parties:
@@ -21,10 +21,12 @@ Dans cette partie nous dessinons en utilisant d3js un apperçu de l'environnemen
 
 #### Partie 4 : Visualisation simple avec chargement statique de données avec d3js
 Dans cette partie nous représentons par un diagramme en barres la répartion du résultat des votes de l'élection présidentielle de 2019 du Sénégal.
+
 ![p4](https://user-images.githubusercontent.com/56593952/111611926-de75a300-87d4-11eb-8d3e-af196e24589a.png)
 
 #### Partie 5 : Présentation de données
 Toujours avec d3js nous présentaons dans un tableau les tendances électorales obtenues par les différents candidats lors des présidentielles du Sénégal en 2019 sur l'ensemble des capitales régionales. On applique une mise en forme conditionnelle au tableau selon certains critères de valeurs.
+
 ![p5](https://user-images.githubusercontent.com/56593952/111613209-2cd77180-87d6-11eb-90d7-b55455071253.png)
 
 #### Partie 6 : Visualisation dynamique
