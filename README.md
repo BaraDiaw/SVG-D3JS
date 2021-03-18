@@ -11,8 +11,11 @@ Dans cette partie nous créeons une application client pour relever sur un table
 Dans cette partie nous partons d'un fichier contenant diverses formes que nous allons transformer en un autre plus joli avec des animations. C'est comme réorganiser les données!!
 
 Avant transformation
+
 ![p2](https://user-images.githubusercontent.com/56593952/111610711-8e4a1100-87d3-11eb-9c1a-3c6204b2bd4c.png)
+
 Après transformation
+
 ![p22](https://user-images.githubusercontent.com/56593952/111610772-9c982d00-87d3-11eb-8d98-cd9910671e9d.png)
 
 #### Partie 3 : Production de dessin avec d3js
