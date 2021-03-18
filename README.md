@@ -1,6 +1,6 @@
 # Les bases du SVG et du D3JS
 
-Dans ce repertoire je partage des travaux de visualisation de données à partir des balises SVG et la librairie d3js de JavaScript. C'est un projet de classe dans le cadre d'une mise en application des notions apprises en cours.
+Dans ce repertoire je partage des travaux de visualisation de données à partir des balises SVG et la librairie d3js de JavaScript. C'est un projet de classe fait avec deux autres étudiants dans le cadre d'une mise en application des notions apprises en cours.
 Le travail est composé de six parties:
 
 #### Partie 1 : HTML,CSS et JavaSript
